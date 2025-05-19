@@ -1,0 +1,42 @@
+{
+  "name": "bug-bounty-hunter",
+  "version": "1.0.0",
+  "description": "A desktop application for bug bounty hunting with OWASP testing capabilities",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "test": "node src/validation.js"
+  },
+  "author": "Bug Bounty Hunter Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "node-forge": "^1.3.1",
+    "node-mitmproxy": "^3.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "electron": "^36.2.1",
+    "electron-builder": "^24.3.0"
+  },
+  "build": {
+    "appId": "com.bugbountyhunter.app",
+    "productName": "Bug Bounty Hunter",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Development"
+    }
+  }
+}
